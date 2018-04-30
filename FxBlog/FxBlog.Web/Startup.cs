@@ -1,8 +1,8 @@
-﻿using FxBlog.Data.Models;
-
-namespace FxBlog.Web
+﻿namespace FxBlog.Web
 {
     using Data;
+    using AutoMapper;
+    using Data.Models;
     using Infrastructure.Extensions;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -10,6 +10,8 @@ namespace FxBlog.Web
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.AspNetCore.Mvc;
+
 
     public class Startup
     {
@@ -30,7 +32,16 @@ namespace FxBlog.Web
                 .AddEntityFrameworkStores<FxBlogDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            services.AddAutoMapper();
+
+            services.AddDomainServices();
+
+            services.AddRouting(routing => routing.LowercaseUrls = true);
+
+            services.AddMvc(options =>
+            {
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +66,15 @@ namespace FxBlog.Web
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "blog",
+                    template: "blog/articles/{id}/{title}",
+                    defaults: new { area = "Blog", controller = "Articles", action = "Details" });
+
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
