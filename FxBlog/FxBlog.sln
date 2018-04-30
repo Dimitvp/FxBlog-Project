@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2043
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxBlog.Web", "FxBlog.Web\FxBlog.Web.csproj", "{427E98D1-266E-42D9-8A76-316ED79409BD}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2D2EDD5E-CFF2-449E-BE2C-710DEB061EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FxBlog.Data", "FxBlog.Data\FxBlog.Data.csproj", "{BAF87CF2-0214-4CA2-B0EF-620C398306EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{427E98D1-266E-42D9-8A76-316ED79409BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427E98D1-266E-42D9-8A76-316ED79409BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427E98D1-266E-42D9-8A76-316ED79409BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427E98D1-266E-42D9-8A76-316ED79409BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2EDD5E-CFF2-449E-BE2C-710DEB061EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2EDD5E-CFF2-449E-BE2C-710DEB061EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2EDD5E-CFF2-449E-BE2C-710DEB061EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2EDD5E-CFF2-449E-BE2C-710DEB061EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAF87CF2-0214-4CA2-B0EF-620C398306EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF87CF2-0214-4CA2-B0EF-620C398306EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF87CF2-0214-4CA2-B0EF-620C398306EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF87CF2-0214-4CA2-B0EF-620C398306EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A80A88C5-CA22-4D41-BC30-ADFAF208D889}
+	EndGlobalSection
+EndGlobal

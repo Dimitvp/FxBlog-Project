@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  fxblog.web:
+    image: fxblogweb
+    build:
+      context: .
+      dockerfile: FxBlog.Web\Dockerfile
