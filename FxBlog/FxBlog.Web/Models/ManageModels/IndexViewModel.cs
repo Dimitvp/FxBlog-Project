@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FxBlog.Web.Models.ManageViewModels
+﻿namespace FxBlog.Web.Models.ManageModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class IndexViewModel
     {
-        public string Username { get; set; }
+        public string Name { get; set; }
+
+        public string Description { get; set; }
 
         public bool IsEmailConfirmed { get; set; }
 

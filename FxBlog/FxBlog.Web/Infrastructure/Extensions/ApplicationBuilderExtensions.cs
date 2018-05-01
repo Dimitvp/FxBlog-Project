@@ -55,7 +55,7 @@
                                 Email = adminEmail,
                                 UserName = adminName,
                                 Name = adminName,
-                                Description = "This is the admin"
+                                Description = "This is the admin Description"
                             };
 
                             await userManager.CreateAsync(adminUser, "Pass123!");

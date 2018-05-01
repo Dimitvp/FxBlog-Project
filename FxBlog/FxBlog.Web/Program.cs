@@ -1,20 +1,14 @@
-﻿using FxBlog.Services.Models;
-
-namespace FxBlog.Web
+﻿namespace FxBlog.Web
 {
-    using System;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
-    using System.Threading.Tasks;
+    using Autofac.Extensions.DependencyInjection;
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;
-    using System.Collections.Generic;
-    using System.Runtime.Serialization.Json;
-    using Models;
+    using System.IO;
+    using System.Net.Http;
 
     public class Program
     {
-        private static readonly HttpClient client = new HttpClient();
+        //private static readonly HttpClient client = new HttpClient();
 
         public static void Main(string[] args)
         {
@@ -24,6 +18,10 @@ namespace FxBlog.Web
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
+                .ConfigureServices(services => services.AddAutofac())
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
 

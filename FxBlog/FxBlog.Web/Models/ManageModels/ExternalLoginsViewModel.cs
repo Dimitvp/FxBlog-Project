@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 
-namespace FxBlog.Web.Models.ManageViewModels
+namespace FxBlog.Web.Models.ManageModels
 {
     public class ExternalLoginsViewModel
     {

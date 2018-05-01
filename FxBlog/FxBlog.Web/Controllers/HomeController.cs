@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using FxBlog.Data.Models;
 using FxBlog.Services;
 using FxBlog.Services.Blog;
 using Microsoft.AspNetCore.Mvc;
 using FxBlog.Web.Models;
 using FxBlog.Web.Models.Home;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Identity;
 using static FxBlog.Web.WebConstants;
 
 namespace FxBlog.Web.Controllers
@@ -18,10 +19,13 @@ namespace FxBlog.Web.Controllers
     {
         private readonly IBlogArticleService articles;
         private readonly IForexServices currences;
+        private readonly UserManager<User> _userManager;
 
         public HomeController(
+            UserManager<User> userManager,
             IBlogArticleService articles, IForexServices currences)
         {
+            _userManager = userManager;
             this.articles = articles;
             this.currences = currences;
         }

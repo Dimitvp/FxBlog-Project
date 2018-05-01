@@ -1,4 +1,6 @@
-﻿namespace FxBlog.Web
+﻿using Autofac;
+
+namespace FxBlog.Web
 {
     using Data;
     using AutoMapper;
@@ -43,7 +45,11 @@
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
             });
         }
-
+        // "Without ConfigureContainer" mechanism shown later.
+        //public void ConfigureContainer(ContainerBuilder builder)
+        //{
+        //    builder.RegisterModule(new AutofacModule());
+        //}
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

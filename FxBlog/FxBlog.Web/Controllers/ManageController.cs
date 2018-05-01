@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using FxBlog.Web.Models;
-using FxBlog.Web.Models.ManageViewModels;
+using FxBlog.Web.Models.ManageModels;
 
 namespace FxBlog.Web.Controllers
 {
@@ -54,7 +54,8 @@ namespace FxBlog.Web.Controllers
 
             var model = new IndexViewModel
             {
-                Username = user.UserName,
+                Name = user.Name,
+                Description = user.Description,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,

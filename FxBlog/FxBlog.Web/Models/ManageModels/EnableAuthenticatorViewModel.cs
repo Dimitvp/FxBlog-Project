@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace FxBlog.Web.Models.ManageViewModels
+namespace FxBlog.Web.Models.ManageModels
 {
     public class EnableAuthenticatorViewModel
     {

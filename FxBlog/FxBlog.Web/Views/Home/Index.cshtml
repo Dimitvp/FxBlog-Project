@@ -4,20 +4,45 @@
 }
 
 <h2>@ViewData["Title"]</h2>
-
-<div class="row course-listings col-md-8">
-    @await Html.PartialAsync("_ArticleListingsPartial", Model.Articles)
-</div>
-
-<div class="row">
-    <spam class="border border-primary">
-        <div class="col-md-4 float-right">
-            <h2>
-                Latest Prices
-            </h2>
-            <p>
-                @await Html.PartialAsync("_ForexListingsPartial", Model.ForexCurrencys)
-            </p>
+<div class="col-md-12">
+    <div class="row course-listings col-md-7">
+        @await Html.PartialAsync("_ArticleListingsPartial", Model.Articles)
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-3 float-right">
+        <div class="row">
+            <spam class="border border-primary">
+                <div>
+                    <h2>
+                        Aboute me
+                    </h2>
+                    <p>
+                    @*@if (User.Identity.IsAuthenticated)
+                    {
+                        @await Html.PartialAsync("_ProfilePartial", Model.UserModel)
+                    }
+                    else
+                    {
+                        <p>
+                            You should log in!
+                        </p>
+                    }*@
+                    </p>
+                </div>
+            </spam>
         </div>
-    </spam>
+
+        <div class="row">
+            <spam class="border border-primary">
+                <div>
+                    <h2>
+                        Latest Prices
+                    </h2>
+                    <p>
+                        @await Html.PartialAsync("_ForexListingsPartial", Model.ForexCurrencys)
+                    </p>
+                </div>
+            </spam>
+        </div>
+    </div>
 </div>
