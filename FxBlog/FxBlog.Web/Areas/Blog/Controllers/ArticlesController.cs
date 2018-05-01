@@ -14,7 +14,7 @@
     using static WebConstants;
 
     [Area(BlogArea)]
-    //[Authorize(Roles = "Admin, BlogAuthor")]
+    [Authorize(Roles = "admin, BlogAuthor")]
     public class ArticlesController : Controller
     {
         private readonly IBlogArticleService articles;

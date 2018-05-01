@@ -1,10 +1,23 @@
 ﻿@model HomeIndexViewModel
 @{
-    ViewData["Title"] = "Blog Articles";
+    ViewData["Title"] = "My Personal Financial Blog";
 }
 
 <h2>@ViewData["Title"]</h2>
 
-<div class="row course-listings">
+<div class="row course-listings col-md-8">
     @await Html.PartialAsync("_ArticleListingsPartial", Model.Articles)
+</div>
+
+<div class="row">
+    <spam class="border border-primary">
+        <div class="col-md-4 float-right">
+            <h2>
+                Latest Prices
+            </h2>
+            <p>
+                @await Html.PartialAsync("_ForexListingsPartial", Model.ForexCurrencys)
+            </p>
+        </div>
+    </spam>
 </div>

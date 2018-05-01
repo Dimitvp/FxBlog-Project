@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ForexCurrencyServiceModel>
+
+<div>
+    <ul class="list-group article-list">
+        @foreach (var currency in Model)
+        {
+            <li class="list-group-item">
+                @currency.Symbol - @currency.Price
+            </li>
+        }
+    </ul>
+</div>
